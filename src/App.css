@@ -1,4 +1,11 @@
 .App {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+/*
+.App {
   text-align: center;
 }
 
@@ -36,3 +43,4 @@
     transform: rotate(360deg);
   }
 }
+*/
