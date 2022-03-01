@@ -7,6 +7,7 @@ import Script from './Script';
 function App() {
   return (
     <div className="App">
+      <img src={logo} className="Logo" alt="logo" />
       <Viewport />
       <Script />
     </div>

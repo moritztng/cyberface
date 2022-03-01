@@ -1,7 +1,15 @@
 .App {
   height: 100vh;
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: minmax(0, 1fr) minmax(0, 2fr) minmax(0, 2fr);
+  grid-template-columns: 1fr auto 1fr;
+  gap: 20px;
+}
+
+.Logo {
+  grid-row: 1;
+  grid-column: 1;
+  height: 40px;
 }
 
 /*

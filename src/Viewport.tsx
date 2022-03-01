@@ -1,6 +1,7 @@
 import React from 'react';
 import './Viewport.css';
 import Video from './Video';
+import ProgressScreen from './ProgressScreen';
 
 function Viewport() {
   return (
@@ -11,3 +12,5 @@ function Viewport() {
 }
 
 export default Viewport;
+
+//<ProgressScreen />
