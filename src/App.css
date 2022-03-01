@@ -6,12 +6,6 @@
   gap: 20px;
 }
 
-.Logo {
-  grid-row: 1;
-  grid-column: 1;
-  height: 40px;
-}
-
 /*
 .App {
   text-align: center;

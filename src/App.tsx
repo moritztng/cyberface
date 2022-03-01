@@ -1,13 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Logo from './Logo';
 import Viewport from './Viewport';
 import Script from './Script';
 
 function App() {
   return (
     <div className="App">
-      <img src={logo} className="Logo" alt="logo" />
+      <Logo />
       <Viewport />
       <Script />
     </div>
