@@ -7,9 +7,15 @@ import Script from './Script';
 function App() {
   return (
     <div className="App">
-      <Logo />
-      <Viewport />
-      <Script />
+      <div className="Logo-container">
+        <Logo />
+      </div>
+      <div className="Viewport-container">
+        <Viewport />
+      </div>
+      <div className="Script-container">
+        <Script />
+      </div>
     </div>
   );
 }

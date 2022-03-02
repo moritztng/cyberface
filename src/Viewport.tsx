@@ -1,12 +1,12 @@
 import React from 'react';
 import './Viewport.css';
-import Video from './Video';
+import Animation from './Animation';
 import ProgressScreen from './ProgressScreen';
 
 function Viewport() {
   return (
     <div className="Viewport">
-      <Video />
+      <Animation />
     </div>
   );
 }

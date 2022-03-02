@@ -1,0 +1,11 @@
+.Animation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.Video-container {
+  min-height: 0;
+}
