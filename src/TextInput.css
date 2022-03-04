@@ -1,20 +1,12 @@
-/* 
-@import url('https://fonts.googleapis.com/css2?family=Exo+2&family=Michroma&family=Titillium+Web&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Exo+2&family=Jura&family=Michroma&family=Titillium+Web&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Exo+2&family=Jura:wght@700&family=Michroma&family=Titillium+Web&display=swap');
-@import url('http://fonts.cdnfonts.com/css/eurostile-extended'); 
-@font-face {
-  font-family: 'MyFont';
-  src: url(./Blender-Pro-Bold.otf);
-}
-*/
-
 .TextInput {
-  resize: none;
   background-color: #1b2530; /* #19232c */
   border: 2px solid #1877f2;
   border-radius: 24px;
-  color: #ffffff;
+  color: inherit;
+  font-size: 27px;
+  font-family: 'Blender Pro';
+  resize: none;
+  padding: 0.8em 1em;
 }
 
 .TextInput:hover {
@@ -22,5 +14,6 @@
 }
 
 .TextInput:focus {
+  box-shadow: 0px 4px 20px 0px #1877f2;
   outline: none;
 }
