@@ -6,7 +6,7 @@ function Script() {
   return (
     <div className="Script">
       <TextInput />
-      <button>Animate</button>
+      <button>animate</button>
     </div>
   );
 }

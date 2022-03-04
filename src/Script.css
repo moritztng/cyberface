@@ -1,6 +1,22 @@
 .Script {
   display: flex;
   flex-direction: column;
+  gap: 30px;
   max-width: 500px;
   margin: auto;
+}
+
+.Script button {
+  background-color: #1877f2;
+  border: none;
+  border-radius: 10px;
+  color: inherit;
+  font-family: inherit;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.Script button:hover {
+  background-color: #267ff2;  
 }
