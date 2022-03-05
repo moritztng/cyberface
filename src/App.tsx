@@ -3,6 +3,7 @@ import './App.css';
 import Logo from './Logo';
 import Viewport from './Viewport';
 import Script from './Script';
+import Download from './Download';
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
       </div>
       <div className="Script-container">
         <Script />
+      </div>
+      <div className="Download-container">
+        <Download />
       </div>
     </div>
   );
