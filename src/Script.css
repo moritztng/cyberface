@@ -2,11 +2,13 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
-  max-width: 500px;
-  margin: auto;
 }
 
-.Script button {
+.TextInput {
+  flex-grow: 1;
+}
+
+.Animate-button {
   background-color: #1877f2;
   border: none;
   border-radius: 10px;
@@ -17,6 +19,22 @@
   cursor: pointer;
 }
 
-.Script button:hover {
+.Animate-button:hover {
   background-color: #267ff2;  
+}
+
+.Download-button {
+  background-color: #1b2530;
+  border-radius: 10px;
+  padding: 0.2em 0.5em;
+  color: inherit;
+  font-family: inherit;
+  font-size: 25px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.Download-button:hover {
+  background-color: #1877f2;
+  box-shadow: 0px 2px 20px 0px #1877f2;  
 }

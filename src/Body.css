@@ -1,0 +1,15 @@
+.Body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Content {
+  max-width: 80%;
+  display: flex;
+  gap: 50px;
+}
+
+.Script {
+  flex: 0 0 400px;
+}

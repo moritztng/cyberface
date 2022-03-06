@@ -1,25 +1,13 @@
 import React from 'react';
 import './App.css';
-import Logo from './Logo';
-import Viewport from './Viewport';
-import Script from './Script';
-import Download from './Download';
+import Header from './Header';
+import Body from './Body';
 
 function App() {
   return (
     <div className="App">
-      <div className="Logo-container">
-        <Logo />
-      </div>
-      <div className="Viewport-container">
-        <Viewport />
-      </div>
-      <div className="Script-container">
-        <Script />
-      </div>
-      <div className="Download-container">
-        <Download />
-      </div>
+      <Header />
+      <Body />
     </div>
   );
 }
