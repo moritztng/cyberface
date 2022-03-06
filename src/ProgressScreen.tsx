@@ -4,7 +4,7 @@ import ProgressBar from './ProgressBar';
 
 function ProgressScreen() {
   return (
-    <div className="ProgressScreen">
+    <div className="Progress-screen">
       <ProgressBar />
     </div>
   );

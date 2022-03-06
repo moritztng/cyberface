@@ -1,0 +1,21 @@
+.Header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px 0;
+}
+
+.Download-button {
+  background-color: #212d3b;
+  border-radius: 10px;
+  padding: 0.2em 0.5em;
+  color: inherit;
+  font-family: inherit;
+  font-size: 25px;
+  text-decoration: none;
+}
+
+.Download-button:hover {
+  background-color: #1877f2;
+  box-shadow: 0px 2px 20px 0px #1877f2;
+}

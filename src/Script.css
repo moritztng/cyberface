@@ -4,7 +4,7 @@
   gap: 30px;
 }
 
-.TextInput {
+.Text-input {
   flex-grow: 1;
 }
 
@@ -20,21 +20,5 @@
 }
 
 .Animate-button:hover {
-  background-color: #267ff2;  
-}
-
-.Download-button {
-  background-color: #1b2530;
-  border-radius: 10px;
-  padding: 0.2em 0.5em;
-  color: inherit;
-  font-family: inherit;
-  font-size: 25px;
-  text-decoration: none;
-  text-align: center;
-}
-
-.Download-button:hover {
-  background-color: #1877f2;
-  box-shadow: 0px 2px 20px 0px #1877f2;  
+  background-color: #267ff2;
 }
