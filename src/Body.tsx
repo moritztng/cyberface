@@ -3,11 +3,11 @@ import './Body.css';
 import Script from './Script';
 import Viewport from './Viewport';
 
-function Body() {
+function Body(props: { onAnimate: Function; }) {
   return (
     <div className="Body">
       <div className="Content">
-        <Script />
+        <Script onAnimate={props.onAnimate} />
         <Viewport />
       </div>
     </div>
