@@ -9,9 +9,9 @@
 }
 
 .Animate-button {
-  background-color: #1877f2;
+  background-color: var(--first-color);
   border: none;
-  border-radius: 10px;
+  border-radius: var(--second-border-radius);
   color: inherit;
   font-family: inherit;
   font-size: 35px;
@@ -20,5 +20,5 @@
 }
 
 .Animate-button:hover {
-  background-color: #267ff2;
+  background-color: var(--second-color);
 }

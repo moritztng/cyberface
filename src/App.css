@@ -1,5 +1,5 @@
 .App {
-  background-color: #131921; /* #131a22 #0f171e #122239 #182132 #0a2540 rgb(8 38 62) #06182c #101423 */
+  background-color: var(--first-background-color);
   height: 100vh;
   display: flex;
   flex-direction: column;

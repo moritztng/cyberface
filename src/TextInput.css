@@ -1,7 +1,7 @@
 .Text-input {
-  background-color: #1b2530; /* #19232c */
+  background-color: var(--second-background-color);
   border: 2px solid transparent;
-  border-radius: 24px;
+  border-radius: var(--first-border-radius);
   color: inherit;
   font-size: 27px;
   font-family: inherit;
@@ -10,6 +10,6 @@
 }
 
 .Text-input:focus {
-  border: 2px solid #1877f2;
+  border: 2px solid var(--first-color);
   outline: none;
 }

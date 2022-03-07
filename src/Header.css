@@ -6,8 +6,8 @@
 }
 
 .Download-button {
-  background-color: #212d3b;
-  border-radius: 10px;
+  background-color: var(--third-background-color);
+  border-radius: var(--second-border-radius);
   padding: 0.2em 0.5em;
   color: inherit;
   font-family: inherit;
@@ -16,6 +16,6 @@
 }
 
 .Download-button:hover {
-  background-color: #1877f2;
-  box-shadow: 0px 2px 20px 0px #1877f2;
+  background-color: var(--first-color);
+  box-shadow: 0px 2px 20px 0px var(--first-color);
 }
