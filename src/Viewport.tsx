@@ -7,10 +7,9 @@ function Viewport() {
   return (
     <div className="Viewport">
       <Video />
+      <ProgressScreen />
     </div>
   );
 }
 
 export default Viewport;
-
-//<ProgressScreen />

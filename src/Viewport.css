@@ -1,4 +1,10 @@
 .Viewport {
   display: flex;
-  align-items: center;  
+  align-items: center;
+  position: relative;  
+}
+
+.Progress-screen {
+  position: absolute;
+  visibility: hidden;
 }
