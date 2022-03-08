@@ -1,10 +1,6 @@
 .Viewport {
+  width: 1280px;
+  aspect-ratio: 16 / 9;
   display: flex;
   align-items: center;
-  position: relative;  
-}
-
-.Progress-screen {
-  position: absolute;
-  visibility: hidden;
 }

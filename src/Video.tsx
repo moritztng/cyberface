@@ -1,8 +1,8 @@
 import React from 'react';
 import './Video.css';
 
-function Video() {
-  return <video className="Video" src="animation.mp4" controls />;
+function Video(props: { src: string; }) {
+  return <video className="Video" src={props.src} controls />;
 }
 
 export default Video;

@@ -1,7 +1,7 @@
 import React from 'react';
 import './Header.css';
 
-function Header() {
+function Header(props: { downloadUrl: string; }) {
   return (
     <div className="Header">
       <a href="/">
@@ -13,7 +13,7 @@ function Header() {
           </g>
         </svg>
       </a>
-      <a className="Download-button" href="https://ddz4ak4pa3d19.cloudfront.net/cache/6f/b7/6fb7f22ea33b65a09020724dc9240a80.jpg" download="animation">
+      <a className="Download-button" href={props.downloadUrl} download="animation">
         Download
       </a>
     </div>

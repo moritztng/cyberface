@@ -3,11 +3,17 @@ import './Viewport.css';
 import Video from './Video';
 import ProgressScreen from './ProgressScreen';
 
-function Viewport() {
+function Viewport(props: { videoSrc: string; loading: boolean; }) {
+  let element;
+  if (props.loading) {
+    element = <ProgressScreen />;
+  } else if (props.videoSrc) {
+    element = <Video src={props.videoSrc} />;
+  }
+
   return (
     <div className="Viewport">
-      <Video />
-      <ProgressScreen />
+      {element}
     </div>
   );
 }
