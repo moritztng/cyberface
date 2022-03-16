@@ -3,16 +3,28 @@ import './App.css';
 import Header from './Header';
 import Body from './Body';
 
+async function query(urlString: string, key: string, value: string) {
+  const url = new URL(urlString);
+  url.searchParams.append(key, value);
+  const response = await fetch(url.toString());
+  const text = await response.text();
+  return text;
+}
+
 function App() {
+  const [speechUrl, setSpeechUrl] = useState('');
   const [animationUrl, setAnimationUrl] = useState('');
   const [animating, setAnimating] = useState(false);
   async function animate(text: string) {
+    setSpeechUrl('');
     setAnimationUrl('');
     setAnimating(true);
-    const response = await fetch(`http://34.90.194.181/synthesize?text=${text}`);
-    const responseText = await response.text();
-    console.log(responseText);
-    setAnimationUrl(responseText);
+    let url = await query('https://speech-ukp4sgtskq-ez.a.run.app/synthesize', 'text', text);
+    setSpeechUrl(url);
+    const id = url.split('/').slice(-1)[0].split('.')[0];
+    await query('http://34.91.23.153:5000/animate', 'id', id);
+    url = await query('http://34.91.23.153:5001/render', 'id', id);
+    setAnimationUrl(url);
     setAnimating(false);
   }
 
