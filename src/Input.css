@@ -1,10 +1,10 @@
-.Script {
+.Input {
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
 
-.Text-input {
+.Input-value {
   flex-grow: 1;
 }
 

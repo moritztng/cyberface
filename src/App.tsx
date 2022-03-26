@@ -15,15 +15,23 @@ function App() {
   const [speechUrl, setSpeechUrl] = useState('');
   const [animationUrl, setAnimationUrl] = useState('');
   const [animating, setAnimating] = useState(false);
-  async function animate(text: string) {
+  async function animate(input: string | File) {
     setSpeechUrl('');
     setAnimationUrl('');
     setAnimating(true);
-    let url = await query('https://speech-ukp4sgtskq-ez.a.run.app/synthesize', 'text', text);
+    let url;
+    if (typeof input === 'string') {
+      url = await query('https://speech-ukp4sgtskq-ez.a.run.app/synthesize', 'text', input);
+    } else {
+      const formData = new FormData();
+      formData.append('audio', input);
+      const response = await fetch('https://europe-west1-synthesizer-337314.cloudfunctions.net/upload-audio', {method: 'POST', body: formData});
+      url = await response.text();
+    }
     setSpeechUrl(url);
-    const id = url.split('/').slice(-1)[0].split('.')[0];
-    await query('http://34.91.23.153:5000/animate', 'id', id);
-    url = await query('http://34.91.23.153:5001/render', 'id', id);
+    const id = url.split('synthesizer-speech/')[1].split('.')[0];
+    await query('http://34.91.95.25:5000/animate', 'id', id);
+    url = await query('http://34.91.95.25:5001/render', 'id', id);
     setAnimationUrl(url);
     setAnimating(false);
   }

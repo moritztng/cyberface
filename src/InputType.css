@@ -1,0 +1,13 @@
+.Input-type {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 25px;
+}
+
+span {
+  cursor: pointer;
+}
+
+.Selected {
+  border-bottom: 2px solid;
+}
