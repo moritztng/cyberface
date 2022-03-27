@@ -30,8 +30,8 @@ function App() {
     }
     setSpeechUrl(url);
     const id = url.split('synthesizer-speech/')[1].split('.')[0];
-    await query('http://34.91.95.25:5000/animate', 'id', id);
-    url = await query('http://34.91.95.25:5001/render', 'id', id);
+    await query('http://34.90.226.174:5000/animate', 'id', id);
+    url = await query('http://34.90.226.174:5001/render', 'id', id);
     setAnimationUrl(url);
     setAnimating(false);
   }
