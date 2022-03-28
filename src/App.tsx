@@ -3,9 +3,11 @@ import './App.css';
 import Header from './Header';
 import Body from './Body';
 
-async function query(urlString: string, key: string, value: string) {
+async function query(urlString: string, params: { [key: string]: string; }) {
   const url = new URL(urlString);
-  url.searchParams.append(key, value);
+  for (const [key, value] of Object.entries(params)) {
+    url.searchParams.append(key, value);
+  }
   const response = await fetch(url.toString());
   const text = await response.text();
   return text;
@@ -21,7 +23,7 @@ function App() {
     setAnimating(true);
     let url;
     if (typeof input === 'string') {
-      url = await query('https://speech-ukp4sgtskq-ez.a.run.app/synthesize', 'text', input);
+      url = await query('https://speech-ukp4sgtskq-ez.a.run.app/synthesize', {'text': input, 'speaker': '44'});
     } else {
       const formData = new FormData();
       formData.append('audio', input);
@@ -30,8 +32,8 @@ function App() {
     }
     setSpeechUrl(url);
     const id = url.split('synthesizer-speech/')[1].split('.')[0];
-    await query('http://34.90.226.174:5000/animate', 'id', id);
-    url = await query('http://34.90.226.174:5001/render', 'id', id);
+    await query('http://34.90.238.56:5000/animate', {'id': id});
+    url = await query('http://34.90.238.56:5001/render', {'id': id});
     setAnimationUrl(url);
     setAnimating(false);
   }
