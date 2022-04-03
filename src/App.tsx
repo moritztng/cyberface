@@ -23,7 +23,7 @@ function App() {
     setAnimating(true);
     let url;
     if (typeof input === 'string') {
-      url = await query('https://speech-ukp4sgtskq-ez.a.run.app/synthesize', {'text': input, 'speaker': '44'});
+      url = await query('https://europe-west1-synthesizer-337314.cloudfunctions.net/speech', {'ssml': input, 'language': 'en-GB', 'speaker': 'en-GB-Wavenet-F', 'gender': 'female', 'rate': '0.85', 'pitch': '-4.0', 'volume': '0.0'});
     } else {
       const formData = new FormData();
       formData.append('audio', input);
@@ -32,8 +32,8 @@ function App() {
     }
     setSpeechUrl(url);
     const id = url.split('synthesizer-speech/')[1].split('.')[0];
-    await query('http://34.90.238.56:5000/animate', {'id': id});
-    url = await query('http://34.90.238.56:5001/render', {'id': id});
+    await query('http://34.90.72.93:5000/animate', {'id': id});
+    url = await query('http://34.90.72.93:5001/render', {'id': id});
     setAnimationUrl(url);
     setAnimating(false);
   }
