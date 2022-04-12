@@ -3,12 +3,12 @@ import './Body.css';
 import Input from './Input';
 import Viewport from './Viewport';
 
-function Body(props: { onAnimate: Function; videoSrc: string; loading: boolean; }) {
+function Body(props: { onListen: Function; onAnimate: Function; videoSrc: string; speaking: boolean; animating: boolean; }) {
   return (
     <div className="Body">
       <div className="Content">
-        <Input onAnimate={props.onAnimate} />
-        <Viewport videoSrc={props.videoSrc} loading={props.loading} />
+        <Input onListen={props.onListen} onAnimate={props.onAnimate} speaking={props.speaking} />
+        <Viewport videoSrc={props.videoSrc} loading={props.animating} />
       </div>
     </div>
   );

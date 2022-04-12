@@ -8,10 +8,16 @@
   flex-grow: 1;
 }
 
-.Animate-button {
-  background-color: var(--first-color);
+.Buttons {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  flex-grow: 1;
   border: none;
   border-radius: var(--second-border-radius);
+  background-color: var(--third-background-color);
   color: inherit;
   font-family: inherit;
   font-size: 35px;
@@ -19,6 +25,6 @@
   cursor: pointer;
 }
 
-.Animate-button:hover {
+button:hover {
   background-color: var(--second-color);
 }

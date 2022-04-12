@@ -1,4 +1,4 @@
-.Audio-input {
+.Settings {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -6,13 +6,4 @@
   justify-content: center;
   background-color: var(--second-background-color);
   border-radius: var(--first-border-radius);
-  cursor: pointer;
-}
-
-p {
-  font-size: 27px;
-}
-
-input {
-  display: none;
 }
