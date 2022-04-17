@@ -7,7 +7,7 @@ import Settings from './Settings';
 function Input(props: { onListen: Function; onAnimate: Function; speaking: boolean; }) {
   const [type, setType] = useState('script');
   const [script, setScript] = useState('It took me a long time to develop a voice.');
-  const [settings, setSettings] = useState({scene: 'space', voice: 'en-US-Wavenet-A', volume: '-10.0', pitch: '-4.0', speed: '0.85', music: 'interstellar'});
+  const [settings, setSettings] = useState({scene: 'space', voice: 'en-GB-Wavenet-F', volume: '-10.0', pitch: '-4.0', speed: '0.85', music: 'interstellar'});
 
   return (
     <div className="Input">

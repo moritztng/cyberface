@@ -1,6 +1,15 @@
 import React from 'react';
 import './Settings.css';
 
+const defaultVoiceSettings: { [voice: string]: { pitch: string; speed: string; }; } = {
+  'en-GB-Wavenet-F': {pitch: '-4.0', speed: '0.85'},
+  'en-US-Wavenet-F': {pitch: '0', speed: '0.9'},
+  'en-US-Wavenet-E': {pitch: '0', speed: '0.9'},
+  'en-US-Wavenet-B': {pitch: '-5.0', speed: '0.9'},
+  'en-GB-Wavenet-D': {pitch: '0', speed: '0.85'},
+  'en-GB-Wavenet-B': {pitch: '-5.0', speed: '0.85'}
+}
+
 function Settings(props: { value: { scene: string; voice: string; volume: string; pitch: string; speed: string; music: string; }; onChange: Function; }) {
   return (
     <div className="Settings">
@@ -13,13 +22,13 @@ function Settings(props: { value: { scene: string; voice: string; volume: string
       </div>
       <div className="Row">
         <label htmlFor="voice">Voice</label>      
-        <select id="voice" value={props.value.voice} onChange={(event) => props.onChange({...props.value, voice: event.target.value})}>
-          <option value="en-US-Wavenet-A">Ada</option>
-          <option value="en-US-Wavenet-B">Mary</option>
-          <option value="en-US-Wavenet-C">Lisa</option>
-          <option value="en-US-Wavenet-D">James</option>
-          <option value="en-US-Wavenet-E">David</option>
-          <option value="en-US-Wavenet-F">Paul</option>
+        <select id="voice" value={props.value.voice} onChange={(event) => props.onChange({...props.value, voice: event.target.value, ...defaultVoiceSettings[event.target.value]})}>
+          <option value="en-GB-Wavenet-F">Ada</option>
+          <option value="en-US-Wavenet-F">Mary</option>
+          <option value="en-US-Wavenet-E">Lisa</option>
+          <option value="en-US-Wavenet-B">James</option>
+          <option value="en-GB-Wavenet-D">David</option>
+          <option value="en-GB-Wavenet-B">Paul</option>
         </select>
       </div>
       <div className="Row">
