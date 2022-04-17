@@ -47,6 +47,7 @@ function Settings(props: { value: { scene: string; voice: string; volume: string
         <label htmlFor="music">Music</label>      
         <select id="music" value={props.value.music} onChange={(event) => props.onChange({...props.value, music: event.target.value})}>
           <option value="interstellar">Interstellar</option>
+          <option value="acoustic">Acoustic</option>
         </select>
       </div>
     </div>

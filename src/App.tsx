@@ -34,7 +34,7 @@ function App() {
     setAnimationUrl('');
     setAnimating(true);
     const speechId = await query('https://europe-west1-synthesizer-337314.cloudfunctions.net/speech', {'ssml': script, 'voice': settings.voice, 'rate': settings.speed, 'pitch': settings.pitch});
-    let url = await query('https://europe-west1-synthesizer-337314.cloudfunctions.net/music', {'id': speechId, 'volume': settings.volume});
+    let url = await query('https://europe-west1-synthesizer-337314.cloudfunctions.net/music', {'id': speechId, 'music': settings.music, 'volume': settings.volume});
     setAudioUrl(url);
     const musicId = url.split('synthesizer-music/')[1].split('.')[0];
     const animateId = await query('http://34.147.22.144:5000/animate', {'id': speechId});
@@ -47,7 +47,7 @@ function App() {
     setAudioUrl('');
     setSpeaking(true);
     const id = await query('https://europe-west1-synthesizer-337314.cloudfunctions.net/speech', {'ssml': script, 'voice': settings.voice, 'rate': settings.speed, 'pitch': settings.pitch});
-    const url = await query('https://europe-west1-synthesizer-337314.cloudfunctions.net/music', {'id': id, 'volume': settings.volume});
+    const url = await query('https://europe-west1-synthesizer-337314.cloudfunctions.net/music', {'id': id, 'music': settings.music, 'volume': settings.volume});
     setAudioUrl(url);
     setSpeaking(false);
     new Audio(url).play();
