@@ -4,13 +4,15 @@ import Header from './Header';
 import Body from './Body';
 
 interface Settings {
-  character: string;
+  scene: 'space' | 'fluid';
   voice: string;
   volume: string;
   pitch: string;
   speed: string;
   music: string;
 }
+
+const sceneToPort = {'space': '5001', 'fluid': '5002'};
 
 async function query(urlString: string, params: { [key: string]: string; }) {
   const url = new URL(urlString);
@@ -28,14 +30,15 @@ function App() {
   const [speaking, setSpeaking] = useState(false);
   const [animating, setAnimating] = useState(false);
   async function animate(script: string, settings: Settings) {
+    setAudioUrl('');
     setAnimationUrl('');
     setAnimating(true);
     const speechId = await query('https://europe-west1-synthesizer-337314.cloudfunctions.net/speech', {'ssml': script, 'voice': settings.voice, 'rate': settings.speed, 'pitch': settings.pitch});
     let url = await query('https://europe-west1-synthesizer-337314.cloudfunctions.net/music', {'id': speechId, 'volume': settings.volume});
     setAudioUrl(url);
     const musicId = url.split('synthesizer-music/')[1].split('.')[0];
-    const animateId = await query('http://35.204.30.72:5000/animate', {'id': speechId});
-    const renderId = await query('http://35.204.30.72:5001/render', {'id': animateId});
+    const animateId = await query('http://34.147.22.144:5000/animate', {'id': speechId});
+    const renderId = await query(`http://34.147.22.144:${sceneToPort[settings.scene]}/render`, {'id': animateId});
     url = await query('https://europe-west1-synthesizer-337314.cloudfunctions.net/audio', {'audio-id': musicId, 'video-id': renderId});
     setAnimationUrl(url);
     setAnimating(false);

@@ -1,13 +1,14 @@
 import React from 'react';
 import './Settings.css';
 
-function Settings(props: { value: { character: string; voice: string; volume: string; pitch: string; speed: string; music: string; }; onChange: Function; }) {
+function Settings(props: { value: { scene: string; voice: string; volume: string; pitch: string; speed: string; music: string; }; onChange: Function; }) {
   return (
     <div className="Settings">
       <div className="Row">
-        <label htmlFor="character">Character</label>      
-        <select id="character" value={props.value.character} onChange={(event) => props.onChange({...props.value, character: event.target.value})}>
-          <option value="astronaut">Astronaut</option>
+        <label htmlFor="scene">Scene</label>      
+        <select id="scene" value={props.value.scene} onChange={(event) => props.onChange({...props.value, scene: event.target.value})}>
+          <option value="space">Space</option>
+          <option value="fluid">Fluid</option>
         </select>
       </div>
       <div className="Row">
