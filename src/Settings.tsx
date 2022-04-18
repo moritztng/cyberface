@@ -10,6 +10,11 @@ const defaultVoiceSettings: { [voice: string]: { pitch: string; speed: string; }
   'en-GB-Wavenet-B': {pitch: '-5.0', speed: '0.85'}
 }
 
+const defaultMusicSettings: { [music: string]: { volume: string; }; } = {
+  'interstellar': {volume: '-10.0'},
+  'acoustic': {volume: '2.0'}
+}
+
 function Settings(props: { value: { scene: string; voice: string; volume: string; pitch: string; speed: string; music: string; }; onChange: Function; }) {
   return (
     <div className="Settings">
@@ -54,7 +59,7 @@ function Settings(props: { value: { scene: string; voice: string; volume: string
       </div>
       <div className="Row">
         <label htmlFor="music">Music</label>      
-        <select id="music" value={props.value.music} onChange={(event) => props.onChange({...props.value, music: event.target.value})}>
+        <select id="music" value={props.value.music} onChange={(event) => props.onChange({...props.value, music: event.target.value, ...defaultMusicSettings[event.target.value]})}>
           <option value="interstellar">Interstellar</option>
           <option value="acoustic">Acoustic</option>
         </select>
