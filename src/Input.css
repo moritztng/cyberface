@@ -13,18 +13,8 @@
   gap: 10px;
 }
 
-button {
+.Buttons .Button {
   flex-grow: 1;
-  border: none;
-  border-radius: var(--second-border-radius);
-  background-color: var(--third-background-color);
-  color: inherit;
-  font-family: inherit;
   font-size: 35px;
   font-weight: bold;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: var(--second-color);
 }

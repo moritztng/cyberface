@@ -1,0 +1,9 @@
+.Studio {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+  
+.Body {
+  flex-grow: 1;
+}

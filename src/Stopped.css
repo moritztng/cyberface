@@ -1,0 +1,17 @@
+.Stopped {
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.Stopped h1 {
+  font-size: 50px;
+}
+
+.Stopped .Button {
+  width: 100%;
+  font-size: 40px;
+  border-radius: 0;
+}

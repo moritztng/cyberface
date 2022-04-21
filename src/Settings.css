@@ -15,7 +15,7 @@
   justify-content: space-between;
 }
 
-select {
+.Settings select {
   width: 150px;
   text-align: center;
   color: inherit;
@@ -26,11 +26,11 @@ select {
   cursor: pointer;
 }
 
-select:focus {
+.Settings select:focus {
   outline: none;
 }
 
-option {
+.Settings option {
   color: black;
 }
 

@@ -104,3 +104,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.Button {
+  border: none;
+  border-radius: var(--second-border-radius);
+  background-color: var(--third-background-color);
+  color: inherit;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.Button:hover {
+  background-color: var(--first-color);
+}

@@ -17,8 +17,8 @@ function Input(props: { onListen: Function; onAnimate: Function; speaking: boole
         {type === 'settings' && <Settings value={settings} onChange={setSettings} />}
       </div>
       <div className="Buttons">
-        <button className="Listen-button" onClick={() => {props.onListen(script, settings)}}>{ props.speaking ? 'loading..' : 'listen' }</button>
-        <button className="Animate-button" onClick={() => {props.onAnimate(script, settings)}}>animate</button>
+        <button className="Listen-button Button" onClick={() => {props.onListen(script, settings)}}>{ props.speaking ? 'loading..' : 'listen' }</button>
+        <button className="Animate-button Button" onClick={() => {props.onAnimate(script, settings)}}>animate</button>
       </div>
     </div>
   );
