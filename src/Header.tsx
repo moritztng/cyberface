@@ -13,7 +13,7 @@ function Header(props: { downloadUrl: string; }) {
           </g>
         </svg>
       </a>
-      <a className="Download-button" href={props.downloadUrl} download="animation">
+      <a className="Download-button" href={props.downloadUrl + '?response-content-disposition=attachment'}>
         Download
       </a>
     </div>
