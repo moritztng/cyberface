@@ -28,6 +28,7 @@ function Studio() {
   const [speaking, setSpeaking] = useState(false);
   const [animating, setAnimating] = useState(false);
   async function animate(script: string, settings: Settings) {
+    if (animating) return;
     audio.current.src = '';
     setAnimationUrl('');
     setAnimating(true);
@@ -42,6 +43,7 @@ function Studio() {
     setAnimating(false);
   }
   async function listen(script: string, settings: Settings) {
+    if (speaking) return;
     audio.current.src = '';
     setSpeaking(true);
     const id = await query('https://synthesizer-ukp4sgtskq-ez.a.run.app/speech', {'ssml': script, 'voice': settings.voice, 'rate': settings.speed, 'pitch': settings.pitch});
