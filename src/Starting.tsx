@@ -1,11 +1,11 @@
 import React from 'react';
 import './Starting.css';
-import ProgressBar from './ProgressBar';
+import Loading from './Loading';
 
 function Starting() {
   return (
     <div className="Starting">
-      <ProgressBar />
+      <Loading text="Starting Session.." />
     </div>
   );
 }

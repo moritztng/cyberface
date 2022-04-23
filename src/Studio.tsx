@@ -23,8 +23,8 @@ async function query(urlString: string, params: { [key: string]: string; }) {
 }
 
 function Studio() {
-  const [audioUrl, setAudioUrl] = useState('');
-  const [animationUrl, setAnimationUrl] = useState('');
+  const [audioUrl, setAudioUrl] = useState('https://storage.googleapis.com/synthesizer-music/262fa7573d25da1772e11892f91c77f7b4484f23e1d79d54c7011cf43656ab22.mp3');
+  const [animationUrl, setAnimationUrl] = useState('https://storage.googleapis.com/synthesizer-audio/d430b368a858e5f541b5acf899d8ce95759046d956c2a157ab6354afecb031dd.mp4');
   const [speaking, setSpeaking] = useState(false);
   const [animating, setAnimating] = useState(false);
   async function animate(script: string, settings: Settings) {

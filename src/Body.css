@@ -5,11 +5,14 @@
 }
 
 .Content {
-  max-width: 80%;
+  width: 80%;
+  height: 80%;
+  max-height: 576px;
   display: flex;
+  justify-content: center;
   gap: 50px;
 }
 
 .Input {
-  flex: 0 0 400px;
+  flex-shrink: 0;
 }
