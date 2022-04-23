@@ -114,6 +114,6 @@ code {
   cursor: pointer;
 }
 
-.Button:hover {
+.Button-hover:hover {
   background-color: var(--first-color);
 }

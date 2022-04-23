@@ -7,7 +7,7 @@ function Body(props: { onListen: Function; onAnimate: Function; videoSrc: string
   return (
     <div className="Body">
       <div className="Content">
-        <Input onListen={props.onListen} onAnimate={props.onAnimate} speaking={props.speaking} />
+        <Input onListen={props.onListen} onAnimate={props.onAnimate} speaking={props.speaking} animating={props.animating} />
         <Viewport videoSrc={props.videoSrc} loading={props.animating} />
       </div>
     </div>
