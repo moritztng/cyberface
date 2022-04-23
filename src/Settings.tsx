@@ -12,7 +12,8 @@ const defaultVoiceSettings: { [voice: string]: { pitch: string; speed: string; }
 
 const defaultMusicSettings: { [music: string]: { volume: string; }; } = {
   'interstellar': {volume: '-10.0'},
-  'acoustic': {volume: '2.0'}
+  'acoustic': {volume: '2.0'},
+  'none': {volume: '0.0'}
 }
 
 function Settings(props: { value: { scene: string; voice: string; volume: string; pitch: string; speed: string; music: string; }; onChange: Function; }) {
@@ -36,13 +37,15 @@ function Settings(props: { value: { scene: string; voice: string; volume: string
           <option value="en-GB-Wavenet-B">Paul</option>
         </select>
       </div>
-      <div className="Row">
-        <label htmlFor="volume">Volume</label>
-        <div className="Range">
-          <input type="range" id="volume" min="-20" max="20" step="1" value={props.value.volume} onChange={(event) => props.onChange({...props.value, volume: event.target.value})} />
-          <span>{props.value.volume}</span>
+      {props.value.music !== 'none' && 
+        <div className="Row">
+          <label htmlFor="volume">Volume</label>
+          <div className="Range">
+            <input type="range" id="volume" min="-20" max="20" step="1" value={props.value.volume} onChange={(event) => props.onChange({...props.value, volume: event.target.value})} />
+            <span>{props.value.volume}</span>
+          </div>
         </div>
-      </div>
+      }
       <div className="Row">
         <label htmlFor="pitch">Pitch</label>
         <div className="Range">
@@ -62,6 +65,7 @@ function Settings(props: { value: { scene: string; voice: string; volume: string
         <select id="music" value={props.value.music} onChange={(event) => props.onChange({...props.value, music: event.target.value, ...defaultMusicSettings[event.target.value]})}>
           <option value="interstellar">Interstellar</option>
           <option value="acoustic">Acoustic</option>
+          <option value="none">None</option>
         </select>
       </div>
     </div>
