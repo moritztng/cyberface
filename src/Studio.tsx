@@ -4,7 +4,7 @@ import Header from './Header';
 import Body from './Body';
 
 interface Settings {
-  scene: 'space' | 'fluid';
+  scene: string;
   voice: string;
   volume: string;
   pitch: string;
