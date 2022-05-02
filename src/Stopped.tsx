@@ -1,4 +1,3 @@
-import React from 'react';
 import './Stopped.css';
 
 function Stopped(props: { onRestart: Function; }) {

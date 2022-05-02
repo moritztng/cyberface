@@ -1,14 +1,13 @@
-import React from 'react';
 import './Body.css';
 import Input from './Input';
 import Viewport from './Viewport';
 
-function Body(props: { onListen: Function; onAnimate: Function; videoSrc: string; speaking: boolean; animating: boolean; }) {
+function Body(props: { videoSrc: string; speaking: boolean; animating: string; onListen: Function; onAnimate: Function; }) {
   return (
     <div className="Body">
       <div className="Content">
-        <Input onListen={props.onListen} onAnimate={props.onAnimate} speaking={props.speaking} animating={props.animating} />
-        <Viewport videoSrc={props.videoSrc} loading={props.animating} />
+        <Input speaking={props.speaking} animating={props.animating} onListen={props.onListen} onAnimate={props.onAnimate} />
+        <Viewport videoSrc={props.videoSrc} animating={props.animating} />
       </div>
     </div>
   );

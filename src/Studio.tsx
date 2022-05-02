@@ -1,61 +1,61 @@
-import React, { useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import './Studio.css';
 import Header from './Header';
 import Body from './Body';
-
-interface Settings {
-  scene: string;
-  voice: string;
-  volume: string;
-  pitch: string;
-  speed: string;
-  music: string;
-}
-
-async function query(urlString: string, params: { [key: string]: string; }) {
-  const url = new URL(urlString);
-  for (const [key, value] of Object.entries(params)) {
-    url.searchParams.append(key, value);
-  }
-  const response = await fetch(url.toString());
-  const text = await response.text();
-  return text;
-}
+import { AudioSettings, VideoSettings, fetchSynthesizer } from './Utils'; 
 
 function Studio() {
-  const audio = useRef(new Audio('https://storage.googleapis.com/synthesizer-music/262fa7573d25da1772e11892f91c77f7b4484f23e1d79d54c7011cf43656ab22.mp3'));
-  const [animationUrl, setAnimationUrl] = useState('https://storage.googleapis.com/synthesizer-audio/d430b368a858e5f541b5acf899d8ce95759046d956c2a157ab6354afecb031dd.mp4');
+  const audio = useRef(new Audio(''));
+  const [animationUrl, setAnimationUrl] = useState('');
   const [speaking, setSpeaking] = useState(false);
-  const [animating, setAnimating] = useState(false);
-  async function animate(script: string, settings: Settings) {
-    if (animating) return;
-    audio.current.src = '';
-    setAnimationUrl('');
-    setAnimating(true);
-    const speechId = await query('https://synthesizer-ukp4sgtskq-ez.a.run.app/speech', {'ssml': script, 'voice': settings.voice, 'rate': settings.speed, 'pitch': settings.pitch});
-    let url = await query('https://synthesizer-ukp4sgtskq-ez.a.run.app/music', {'id': speechId, 'music': settings.music, 'volume': settings.volume});
+  const [animating, setAnimating] = useState('finished');
+
+  async function synthesizeAudio(script: string, audioSettings: AudioSettings) {
+    const speechId = await fetchSynthesizer('speech', {'ssml': script, 'voice': audioSettings.voice, 'rate': audioSettings.speed, 'pitch': audioSettings.pitch});
+    const url = await fetchSynthesizer('add-music', {'id': speechId, 'music': audioSettings.music, 'volume': audioSettings.volume});
     audio.current.src = url;
-    const musicId = url.split('synthesizer-music/')[1].split('.')[0];
-    const speech2faceId = await query('https://synthesizer-ukp4sgtskq-ez.a.run.app/speech2face', {'id': speechId});
-    const graphicsId = await query(`https://synthesizer-ukp4sgtskq-ez.a.run.app/graphics`, {'id': speech2faceId, 'scene': settings.scene});
-    url = await query('https://synthesizer-ukp4sgtskq-ez.a.run.app/audio', {'audio-id': musicId, 'video-id': graphicsId});
-    setAnimationUrl(url);
-    setAnimating(false);
+    const audioId = url.split('/').slice(-1)[0].split('.')[0];
+    return [speechId, audioId];
   }
-  async function listen(script: string, settings: Settings) {
-    if (speaking) return;
-    audio.current.src = '';
-    setSpeaking(true);
-    const id = await query('https://synthesizer-ukp4sgtskq-ez.a.run.app/speech', {'ssml': script, 'voice': settings.voice, 'rate': settings.speed, 'pitch': settings.pitch});
-    audio.current.src = await query('https://synthesizer-ukp4sgtskq-ez.a.run.app/music', {'id': id, 'music': settings.music, 'volume': settings.volume});
-    setSpeaking(false);
-    audio.current.play();
+  async function synthesizeVideo(speechId: string, audioId: string, videoSettings: VideoSettings) {
+    setAnimationUrl('');
+    const animationId = await fetchSynthesizer('speech2face', {'id': speechId});
+    const graphicsId = await fetchSynthesizer('graphics', {'id': animationId, 'scene': videoSettings.scene});
+    const url = await fetchSynthesizer('add-audio', {'audio-id': audioId, 'video-id': graphicsId});
+    setAnimationUrl(url);
+  }
+
+  async function listen(script: string, audioSettings: AudioSettings) {
+    if (!script || speaking) return;
+    try {
+      setSpeaking(true);
+      await synthesizeAudio(script, audioSettings);
+      setSpeaking(false);
+      audio.current.play();
+    } catch (e) {
+      setSpeaking(false);
+    }
+  }
+  async function animate(script: string, audioSettings: AudioSettings, videoSettings: VideoSettings) {
+    if (!script || animating === 'loading') return;
+    try {
+      setAnimating('loading');
+      const [speechId, audioId] = await synthesizeAudio(script, audioSettings);
+      await synthesizeVideo(speechId, audioId, videoSettings);
+      setAnimating('finished');
+    } catch (e) {
+      if (e instanceof Error && e.message === 'server error') {
+        setAnimating('server error');
+      } else {
+        setAnimating('client error');
+      }
+    }
   }
 
   return (
     <div className="Studio">
       <Header downloadUrl={animationUrl} />
-      <Body onListen={listen} onAnimate={animate} videoSrc={animationUrl} speaking={speaking} animating={animating} />
+      <Body videoSrc={animationUrl} speaking={speaking} animating={animating} onListen={listen} onAnimate={animate} />
     </div>
   );
 }

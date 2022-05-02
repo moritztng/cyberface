@@ -1,3 +1,17 @@
 .Starting {
   height: 100%;
 }
+
+@media screen and (max-width: 1100px) {
+  .Starting {
+    height: 100vh;
+  }
+  
+  .Starting .Loading-text {
+    position: fixed;
+    bottom: 30px;
+    right: 50%;
+    transform: translateX(50%);
+    white-space: nowrap;
+  }
+}

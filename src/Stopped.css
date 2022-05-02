@@ -8,10 +8,17 @@
 
 .Stopped h1 {
   font-size: 50px;
+  margin: 30px;
 }
 
 .Stopped .Button {
   width: 100%;
   font-size: 40px;
   border-radius: 0;
+}
+
+@media screen and (max-width: 1100px) {
+  .Stopped {
+    height: 100vh;
+  }
 }

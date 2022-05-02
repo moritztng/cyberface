@@ -16,3 +16,19 @@
 .Input {
   flex-shrink: 0;
 }
+
+@media screen and (max-width: 1100px) {
+  .Body {
+    align-items: normal;
+    padding: 50px 0;
+  }
+
+  .Content {
+    width: 90%;
+    height: auto;
+    max-height: none;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: normal;
+  }
+}

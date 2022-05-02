@@ -26,10 +26,6 @@
   cursor: pointer;
 }
 
-.Settings select:focus {
-  outline: none;
-}
-
 .Settings option {
   color: black;
 }

@@ -1,4 +1,3 @@
-import React from 'react';
 import './Video.css';
 
 function Video(props: { src: string; }) {

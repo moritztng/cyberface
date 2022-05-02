@@ -1,24 +1,25 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './Input.css';
 import InputType from './InputType';
 import Script from './Script';
 import Settings from './Settings';
 
-function Input(props: { onListen: Function; onAnimate: Function; speaking: boolean; animating: boolean; }) {
+function Input(props: { speaking: boolean; animating: string; onListen: Function; onAnimate: Function; }) {
   const [type, setType] = useState('script');
-  const [script, setScript] = useState('It took me a long time to develop a voice.');
-  const [settings, setSettings] = useState({scene: 'space', voice: 'en-GB-Wavenet-F', volume: '-10.0', pitch: '-4.0', speed: '0.85', music: 'interstellar'});
+  const [script, setScript] = useState('');
+  const [audioSettings, setAudioSettings] = useState({voice: 'en-GB-Wavenet-F', volume: '-10.0', pitch: '-4.0', speed: '0.85', music: 'interstellar'});
+  const [videoSettings, setVideoSettings] = useState({scene: 'space'});
 
   return (
     <div className="Input">
       <InputType type={type} onSelect={setType} />
       <div className="Input-value">
         {type === 'script' && <Script value={script} onChange={setScript} />}
-        {type === 'settings' && <Settings value={settings} onChange={setSettings} />}
+        {type === 'settings' && <Settings audio={audioSettings} video={videoSettings} onAudioChange={setAudioSettings} onVideoChange={setVideoSettings} />}
       </div>
       <div className="Buttons">
-        <button className={'Listen-button Button' + (props.speaking ? '' : ' Button-hover')} onClick={() => {props.onListen(script, settings)}}>{ props.speaking ? 'loading..' : 'listen' }</button>
-        <button className={'Animate-button Button' + (props.animating ? '' : ' Button-hover')} onClick={() => {props.onAnimate(script, settings)}}>{ props.animating ? 'loading..' : 'animate' }</button>
+        <button className={'Listen-button Button' + ((script && !props.speaking) ? ' Button-hover' : '')} onClick={() => props.onListen(script, audioSettings)}>{props.speaking ? 'loading..' : 'listen'}</button>
+        <button className={'Animate-button Button' + ((script && props.animating !== 'loading') ? ' Button-hover' : '')} onClick={() => props.onAnimate(script, audioSettings, videoSettings)}>{props.animating === 'loading' ? 'loading..' : 'animate'}</button>
       </div>
     </div>
   );

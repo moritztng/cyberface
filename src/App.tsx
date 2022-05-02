@@ -1,9 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './App.css';
 import Starting from './Starting';
 import Studio from './Studio';
 import Stopped from './Stopped';
 import InactivityAlert from './InactivityAlert';
+import { fetchSynthesizer } from './Utils';
 
 function App() {
   const inactivityCounter = useRef(1);
@@ -13,21 +14,23 @@ function App() {
   useEffect(() => {
     if (serverState !== 'starting') return;
     async function start() {
-      await fetch('https://synthesizer-ukp4sgtskq-ez.a.run.app/start');
+      await fetchSynthesizer('start');
       setServerState('started');
-      function onMousemove() {
+      function onActivity() {
         setInactivityAlert(false);
         inactivityCounter.current = 0;
       }
-      window.addEventListener('mousemove', onMousemove);
+      window.addEventListener('mousemove', onActivity);
+      window.addEventListener('touchstart', onActivity);
       const interval = window.setInterval(() => {
         if (inactivityCounter.current === 0) {
-          fetch('https://synthesizer-ukp4sgtskq-ez.a.run.app/start');
+          fetchSynthesizer('start');
         } else if (inactivityCounter.current === 5) {
           setInactivityAlert(true);
         } else if (inactivityCounter.current === 10) {
           setInactivityAlert(false);
-          window.removeEventListener('mousemove', onMousemove);
+          window.removeEventListener('mousemove', onActivity);
+          window.removeEventListener('touchstart', onActivity);
           clearInterval(interval);
           setServerState('stopped');
           inactivityCounter.current = 0;

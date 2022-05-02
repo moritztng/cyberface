@@ -14,5 +14,4 @@
 
 .Script:focus {
   border: 2px solid var(--first-color);
-  outline: none;
 }

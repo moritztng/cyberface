@@ -1,4 +1,3 @@
-import React from 'react';
 import './InputType.css';
 
 function InputType(props: { type: string; onSelect: Function; }) {

@@ -1,4 +1,3 @@
-import React from 'react';
 import fluid from './assets/images/fluid.jpg';
 import space from './assets/images/space.jpg';
 import './Loading.css';

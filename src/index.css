@@ -105,6 +105,14 @@ code {
     monospace;
 }
 
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+*:focus {
+  outline: none;
+}
+
 .Button {
   border: none;
   border-radius: var(--second-border-radius);
@@ -114,6 +122,12 @@ code {
   cursor: pointer;
 }
 
-.Button-hover:hover {
+.Button-hover:active {
   background-color: var(--first-color);
+}
+
+@media (hover: hover) {
+  .Button-hover:hover {
+    background-color: var(--first-color);
+  }
 }

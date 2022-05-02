@@ -2,3 +2,10 @@
   background-color: var(--first-background-color);
   height: 100vh;
 }
+
+@media screen and (max-width: 1100px) {
+  .App {
+    height: auto;
+    min-height: 100vh;
+  }
+}
