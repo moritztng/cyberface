@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/static/css/main.f4b01fde.css",
+    "main.js": "/static/js/main.bcc9d7c9.js",
+    "static/js/787.0cb9f6e9.chunk.js": "/static/js/787.0cb9f6e9.chunk.js",
+    "static/media/space.jpg": "/static/media/space.efa22bb8eb9d5e67281e.jpg",
+    "static/media/fluid.jpg": "/static/media/fluid.1b6ff4a206bfe0397764.jpg",
+    "static/media/logo256.png": "/static/media/logo256.a682afe0ee9c8cfd8261.png",
+    "static/media/BlenderPro-BookItalic.woff": "/static/media/BlenderPro-BookItalic.c644ed41323443c211e2.woff",
+    "static/media/BlenderPro-ThinItalic.woff": "/static/media/BlenderPro-ThinItalic.27817076c160f77784a3.woff",
+    "static/media/BlenderPro-MediumItalic.woff": "/static/media/BlenderPro-MediumItalic.e2029f419d88222e6146.woff",
+    "static/media/BlenderPro-Book.woff": "/static/media/BlenderPro-Book.ed35621e4ed57e55f6df.woff",
+    "static/media/BlenderPro-BoldItalic.woff": "/static/media/BlenderPro-BoldItalic.ea31b15d2bebc7626a4b.woff",
+    "static/media/BlenderPro-Bold.woff": "/static/media/BlenderPro-Bold.fc9db5751a382ad8879a.woff",
+    "static/media/BlenderPro-Medium.woff": "/static/media/BlenderPro-Medium.e6de85f65ede989c1934.woff",
+    "static/media/BlenderPro-Thin.woff": "/static/media/BlenderPro-Thin.16c88287a3141d2f252f.woff",
+    "static/media/BlenderPro-Heavy.woff": "/static/media/BlenderPro-Heavy.3f059bd540bc671a9d6b.woff",
+    "static/media/BlenderPro-BookItalic.woff2": "/static/media/BlenderPro-BookItalic.b29c7e2e3a492d472663.woff2",
+    "static/media/BlenderPro-ThinItalic.woff2": "/static/media/BlenderPro-ThinItalic.46265464bfced35e6da3.woff2",
+    "static/media/BlenderPro-MediumItalic.woff2": "/static/media/BlenderPro-MediumItalic.e16eb73e2f901a7e416e.woff2",
+    "static/media/BlenderPro-Book.woff2": "/static/media/BlenderPro-Book.92e9aa2ff6c583c09e05.woff2",
+    "static/media/BlenderPro-Bold.woff2": "/static/media/BlenderPro-Bold.1848317044de0fb8793f.woff2",
+    "static/media/BlenderPro-Medium.woff2": "/static/media/BlenderPro-Medium.2e8418291f661fd81f6f.woff2",
+    "static/media/BlenderPro-BoldItalic.woff2": "/static/media/BlenderPro-BoldItalic.fa2063708727e78dd700.woff2",
+    "static/media/BlenderPro-Thin.woff2": "/static/media/BlenderPro-Thin.53165eefa6b345110e5f.woff2",
+    "static/media/BlenderPro-Heavy.woff2": "/static/media/BlenderPro-Heavy.644c3e643b4eed287557.woff2",
+    "index.html": "/index.html",
+    "main.f4b01fde.css.map": "/static/css/main.f4b01fde.css.map",
+    "main.bcc9d7c9.js.map": "/static/js/main.bcc9d7c9.js.map",
+    "787.0cb9f6e9.chunk.js.map": "/static/js/787.0cb9f6e9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f4b01fde.css",
+    "static/js/main.bcc9d7c9.js"
+  ]
+}
