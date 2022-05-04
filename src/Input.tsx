@@ -6,7 +6,7 @@ import Settings from './Settings';
 
 function Input(props: { speaking: boolean; animating: string; onListen: Function; onAnimate: Function; }) {
   const [type, setType] = useState('script');
-  const [script, setScript] = useState('');
+  const [script, setScript] = useState("Look again at that dot. That's here. That's home. That's us. On it *0.1s* everyone you love, everyone you know, everyone you ever heard of, every human being who ever was, lived out their lives.");
   const [audioSettings, setAudioSettings] = useState({voice: 'en-GB-Wavenet-F', volume: '-10.0', pitch: '-4.0', speed: '0.85', music: 'interstellar'});
   const [videoSettings, setVideoSettings] = useState({scene: 'space'});
 

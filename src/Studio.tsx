@@ -5,8 +5,8 @@ import Body from './Body';
 import { AudioSettings, VideoSettings, fetchSynthesizer } from './Utils'; 
 
 function Studio() {
-  const audio = useRef(new Audio(''));
-  const [animationUrl, setAnimationUrl] = useState('');
+  const audio = useRef(new Audio('https://storage.googleapis.com/synthesizer-audio/66db59c00f3730137117e26d34865887f6bb897793bd423943a368b0d93296bc.mp3'));
+  const [animationUrl, setAnimationUrl] = useState('https://storage.googleapis.com/synthesizer-video/e571e4cab37ed34cf7d64df880a7705a5073dacd0b4a8fc6e308e54d74934d29.mp4');
   const [speaking, setSpeaking] = useState(false);
   const [animating, setAnimating] = useState('finished');
 
