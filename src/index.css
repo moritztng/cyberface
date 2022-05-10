@@ -1,90 +1,11 @@
-@font-face {
-  font-family: 'Blender Pro';
-  src: local('Blender Pro Medium'), local('BlenderPro-Medium'),
-      url('./assets/fonts/BlenderPro-Medium.woff2') format('woff2'),
-      url('./assets/fonts/BlenderPro-Medium.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Blender Pro';
-  src: local('Blender Pro Thin Italic'), local('BlenderPro-ThinItalic'),
-      url('./assets/fonts/BlenderPro-ThinItalic.woff2') format('woff2'),
-      url('./assets/fonts/BlenderPro-ThinItalic.woff') format('woff');
-  font-weight: 100;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Blender Pro';
-  src: local('Blender Pro Heavy'), local('BlenderPro-Heavy'),
-      url('./assets/fonts/BlenderPro-Heavy.woff2') format('woff2'),
-      url('./assets/fonts/BlenderPro-Heavy.woff') format('woff');
-  font-weight: 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Blender Pro Book';
-  src: local('Blender Pro Book Italic'), local('BlenderPro-BookItalic'),
-      url('./assets/fonts/BlenderPro-BookItalic.woff2') format('woff2'),
-      url('./assets/fonts/BlenderPro-BookItalic.woff') format('woff');
-  font-weight: normal;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Blender Pro Book';
-  src: local('Blender Pro Book'), local('BlenderPro-Book'),
-      url('./assets/fonts/BlenderPro-Book.woff2') format('woff2'),
-      url('./assets/fonts/BlenderPro-Book.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Blender Pro';
-  src: local('Blender Pro Bold'), local('BlenderPro-Bold'),
-      url('./assets/fonts/BlenderPro-Bold.woff2') format('woff2'),
-      url('./assets/fonts/BlenderPro-Bold.woff') format('woff');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Blender Pro';
-  src: local('Blender Pro Thin'), local('BlenderPro-Thin'),
-      url('./assets/fonts/BlenderPro-Thin.woff2') format('woff2'),
-      url('./assets/fonts/BlenderPro-Thin.woff') format('woff');
-  font-weight: 100;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Blender Pro';
-  src: local('Blender Pro Medium Italic'), local('BlenderPro-MediumItalic'),
-      url('./assets/fonts/BlenderPro-MediumItalic.woff2') format('woff2'),
-      url('./assets/fonts/BlenderPro-MediumItalic.woff') format('woff');
-  font-weight: 500;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Blender Pro';
-  src: local('Blender Pro Bold Italic'), local('BlenderPro-BoldItalic'),
-      url('./assets/fonts/BlenderPro-BoldItalic.woff2') format('woff2'),
-      url('./assets/fonts/BlenderPro-BoldItalic.woff') format('woff');
-  font-weight: bold;
-  font-style: italic;
-}
+@import "./typography.css";
 
 :root {
   --text-color: #ffffff;
   --first-color:#1877f2;
   --second-color: #267ff2;
-  --first-background-color: #131921; /* #131a22 #0f171e #122239 #182132 #0a2540 rgb(8 38 62) #06182c #101423 */
-  --second-background-color: #1b2530; /* #19232c */
+  --first-background-color: #131921;
+  --second-background-color: #1b2530;
   --third-background-color: #212d3b;
   --first-border-radius: 24px;
   --second-border-radius: 10px;
@@ -92,17 +13,10 @@
 
 body {
   margin: 0;
-  font-family: 'Blender Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Blender Pro', -apple-system, 'Roboto', 'sans-serif', 'serif';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--text-color);
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
 }
 
 * {

@@ -15,3 +15,10 @@
 .Script:focus {
   border: 2px solid var(--first-color);
 }
+
+@media screen and (max-width: 1100px) {
+  .Script {
+    border-radius: var(--second-border-radius);
+    font-size: 24px;
+  }
+}

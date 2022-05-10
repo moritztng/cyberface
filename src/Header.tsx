@@ -4,8 +4,10 @@ import logo from './assets/images/logo256.png';
 function Header(props: { downloadUrl: string; }) {
   return (
     <div className="Header">
-      <img className="Logo" src={logo} alt="logo" />
-      <a className="Download-button" href={props.downloadUrl + '?response-content-disposition=attachment'}>
+      <a className="Logo" href="https://cyberstudio.app">
+        <img src={logo} alt="logo" />
+      </a>
+      <a className="Download-button" href={props.downloadUrl}>
         Download
       </a>
     </div>

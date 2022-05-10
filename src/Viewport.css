@@ -15,4 +15,8 @@
     width: 100%;
     height: 51vw;
   }
+
+  .Viewport video, .Viewport img {
+    border-radius: var(--second-border-radius);
+  }
 }
