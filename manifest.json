@@ -1,6 +1,6 @@
 {
   "short_name": "Cyberface",
-  "name": "Create React App Sample",
+  "name": "Cyberface",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +20,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#131921",
+  "background_color": "#131921"
 }
